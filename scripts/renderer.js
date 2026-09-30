@@ -108,8 +108,9 @@ class Renderer {
             [0, 255, 0, 255], framebuffer, this.show_points);
         this.drawConvexPolygon([{x: 340, y: 160}, {x: 290, y: 360}, {x: 260, y: 360}, {x: 310, y: 160}], 
             [0, 255, 0, 255], framebuffer, this.show_points);
-        this.drawConvexPolygon([{x: 215, y: 250}, {x: 335, y: 250}, {x: 335, y: 270}, {x: 215, y: 270}], 
-            [0, 255, 0, 255], framebuffer, this.show_points);
+        for(let i = 250; i <= 270; i=i+2){
+            this.drawLine({x: 215, y: i}, {x: 335, y: i}, [0, 255, 0, 255], framebuffer);
+        }
 
         for(let i = 365; i <= 400; i++){
             this.drawBezierCurve({x: i+100, y: 160}, {x: i, y: 160}, {x: i, y: 360}, {x: i+100, y: 360}, 
